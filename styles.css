@@ -1,0 +1,372 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #F5F5F5;
+    color: #212121;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 暗色模式（黑色底色） */
+body.dark-mode {
+    background-color: #121212;
+    color: #FFFFFF;
+}
+
+/* 导航栏 */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1A1A1A;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+body.dark-mode nav {
+    background-color: #2D2D2D;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo 样式 */
+.logo {
+    flex-shrink: 0;
+}
+
+#company-logo {
+    height: 60px;
+    width: auto;
+    transition: filter 0.3s;
+}
+
+body.dark-mode #company-logo {
+    filter: brightness(1.8) contrast(1.2);
+}
+
+/* 导航栏菜单（添加动画） */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 25px;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s, font-size 0.3s;
+}
+
+body.dark-mode nav ul li a {
+    color: #FFFFFF;
+}
+
+nav ul li a:hover {
+    color: #4CAF50;
+    transform: scale(1.1);
+    font-size: 20px;
+}
+
+/* 导航栏右侧 */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 语言选择框 */
+#language-select {
+    padding: 8px;
+    background-color: #FFFFFF;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    color: #212121;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.dark-mode #language-select {
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+    border-color: #8BC34A;
+}
+
+/* 暗色模式按钮 */
+#theme-toggle {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: #388E3C;
+}
+
+body.dark-mode #theme-toggle {
+    background-color: #FFCA28;
+}
+
+body.dark-mode #theme-toggle:hover {
+    background-color: #FFB300;
+}
+
+/* 通用模块样式 */
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px 80px;
+    text-align: center;
+    scroll-margin-top: 80px;
+    transition: background-color 0.3s;
+    background-color: #F5F5F5;
+}
+
+/* 确保 content 可见 */
+.content {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #212121;
+    margin-bottom: 20px;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+body.dark-mode h1, body.dark-mode h2 {
+    color: #FFFFFF;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+p {
+    color: #757575;
+    margin-bottom: 15px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+body.dark-mode p {
+    color: #D0D0D0;
+}
+
+/* 主页 */
+#home {
+    background: linear-gradient(135deg, #F5F5F5 60%, #E6F7E6 100%);
+}
+
+body.dark-mode #home {
+    background: linear-gradient(135deg, #121212 60%, #1E3A5F 100%);
+}
+
+/* 我们的优势 */
+#advantages {
+    background-color: #FFFFFF;
+}
+
+body.dark-mode #advantages {
+    background-color: #1E1E1E;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.advantage-item {
+    background-color: #FFFFFF;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+body.dark-mode .advantage-item {
+    background-color: #2D2D2D;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.advantage-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+}
+
+.advantage-item h3 {
+    color: #FFCA28;
+    font-size: 24px;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+body.dark-mode .advantage-item h3 {
+    color: #FFCA28;
+}
+
+/* 我们的作品（轮播） */
+#works {
+    background: linear-gradient(135deg, #F5F5F5 60%, #F0F7E0 100%);
+}
+
+body.dark-mode #works {
+    background: linear-gradient(135deg, #121212 60%, #3F2A44 100%);
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto; /* 居中 */
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.poster {
+    flex: 0 0 200px;
+    margin-right: 20px;
+}
+
+.poster img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+body.dark-mode .poster img {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.poster img:hover {
+    transform: scale(1.05);
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background-color: rgba(76, 175, 80, 0.8);
+}
+
+/* 联系我们 */
+#contact {
+    background-color: #FFFFFF;
+}
+
+body.dark-mode #contact {
+    background-color: #1E1E1E;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .nav-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .section {
+        padding: 80px 15px 60px;
+    }
+
+    .carousel {
+        max-width: 100%;
+        margin: 30px auto; /* 小屏幕下也居中 */
+    }
+
+    .poster {
+        flex: 0 0 150px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    #company-logo {
+        height: 40px;
+    }
+}
